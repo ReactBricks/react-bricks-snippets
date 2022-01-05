@@ -1,0 +1,122 @@
+{
+  "React Bricks TypeScript Brick": {
+    "prefix": "brick",
+    "body": [
+      "import React from 'react'",
+      "import { Text, RichText, Image, File, Repeater, types } from 'react-bricks/frontend'",
+      "",
+      "interface Props {",
+      "\t",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: types.Brick<Props> = (props) => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<Text",
+      "\t\t\t\tpropName=\"title\"",
+      "\t\t\t\tplaceholder=\"Title...\"",
+      "\t\t\t\trenderBlock={({ children }) => (<span>{children}</span>)}",
+      "\t\t\t/>$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "${1:${TM_FILENAME_BASE}}.schema = {",
+      "\tname: '${1:${TM_FILENAME_BASE}}',",
+      "\tlabel: '${1:${TM_FILENAME_BASE}}',",
+      "\t$LINE_COMMENT category: '',",
+      "\t$LINE_COMMENT tags: [],",
+      "",
+      "\t$LINE_COMMENT Defaults when a new brick is added",
+      "\tgetDefaultProps: () => ({",
+      "\t\ttitle: 'Thick as a brick',",
+      "\t}),",
+      "",
+      "\t$LINE_COMMENT Sidebar Edit controls for props",
+      "\tsideEditProps: [],",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Bricks TypeScript brick"
+  },
+  "React Bricks sideEditProp": {
+    "prefix": "sideEditProp",
+    "body": [
+      "{",
+      "\tname: '${1:name}',",
+      "\tlabel: '${2:Label}',",
+      "\ttype: types.SideEditPropType.${3|Text,Textarea,Number,Date,Boolean,Select,Range,Image,Custom|},",
+      "}"
+    ],
+    "description": "Creates a React Bricks' Brick `sideEditProp`"
+  },
+  "React Bricks selectOptions": {
+    "prefix": "selectOptions",
+    "body": [
+      "selectOptions: {",
+      "\tdisplay: types.OptionsDisplay.${1|Select,Radio,Color|},",
+      "\toptions: [",
+      "\t\t{ value: '${2:value}', label: '${3:Label}' },",
+      "\t]",
+      "}"
+    ],
+    "description": "Creates `selectOptions` for a select `sideEditProp`"
+  },
+  "React Bricks Text": {
+    "prefix": "Text",
+    "body": [
+      "<Text",
+      "\tpropName=\"${1:text}\"",
+      "\tplaceholder=\"Type a ${1:text}...\"",
+      "\trenderBlock={({ children \\}) => ${2:(<span>{children\\}</span>)}}",
+      "/>"
+    ],
+    "description": "Add a React Bricks <Text> component"
+  },
+  "React Bricks RichText": {
+    "prefix": "RichText",
+    "body": [
+      "<RichText",
+      "\tpropName=\"${1:text}\"",
+      "\tplaceholder=\"Type a ${1:text}...\"",
+      "\trenderBlock={({ children \\}) => (${2:<span>{children\\}</span>})}",
+      "\tallowedFeatures={[types.RichTextFeatures.${3:Bold}]}",
+      "/>"
+    ],
+    "description": "Add a React Bricks <RichText> component"
+  },
+  "React Bricks Image": {
+    "prefix": "Image",
+    "body": [
+      "<Image",
+      "\tpropName=\"${1:image}\"",
+      "\talt=\"${2:altText}\"",
+      "\tmaxWidth={${3:300}}",
+      "\taspectRatio={${4:1}}",
+      "/>"
+    ],
+    "description": "Add a React Bricks <Image> component"
+  },
+  "React Bricks File": {
+    "prefix": "File",
+    "body": [
+      "<File",
+      "\tpropName=\"${1:file}\"",
+      "\tallowedExtensions={[${2:'.pdf'}]}",
+      "\trenderBlock={({ name, url, size }) => (",
+      "\t\t<a href={url}>",
+      "\t\t\t{name}, {size / 1000}KB",
+      "\t\t</a>",
+      "\t)}",
+      "/>"
+    ],
+    "description": "Add React Bricks <File> component"
+  },
+  "React Bricks Repeater": {
+    "prefix": "Repeater",
+    "body": ["<Repeater propName=\"${1:propName}\" />"],
+    "description": "Add React Bricks <Repeater> component"
+  }
+}
