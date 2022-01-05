@@ -4,7 +4,22 @@
   "publisher": "ReactBricks",
   "displayName": "React Bricks Snippets",
   "description": "React Bricks code snippets (TypeScript)",
-  "repository": "https://github.com/ReactBricks/react-bricks-snippets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReactBricks/react-bricks-snippets"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "react bricks",
+    "react",
+    "bricks",
+    "react cms"
+  ],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#f65a8e",
+    "theme": "light"
+  },
   "engines": {
     "vscode": "^1.63.0"
   },
