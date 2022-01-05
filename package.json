@@ -16,10 +16,6 @@
     "react cms"
   ],
   "icon": "icon.png",
-  "galleryBanner": {
-    "color": "#f65a8e",
-    "theme": "light"
-  },
   "engines": {
     "vscode": "^1.63.0"
   },
