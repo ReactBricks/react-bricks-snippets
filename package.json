@@ -1,9 +1,10 @@
 {
   "name": "react-bricks-snippets",
   "version": "0.0.1",
-  "publisher": "React Bricks",
+  "publisher": "ReactBricks",
   "displayName": "React Bricks Snippets",
   "description": "React Bricks code snippets (TypeScript)",
+  "repository": "https://github.com/ReactBricks/react-bricks-snippets",
   "engines": {
     "vscode": "^1.63.0"
   },
