@@ -30,6 +30,10 @@ You can easily create a project using the React Bricks CLI:
 
 ## Release Notes
 
-### 0.0.1
+### 0.0.1 - 0.0.3
 
 Initial release
+
+### 0.0.4
+
+Bricks code compatible with React Server Components

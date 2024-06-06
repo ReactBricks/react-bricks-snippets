@@ -1,7 +1,7 @@
 {
   "name": "react-bricks-snippets",
-  "version": "0.0.3",
-  "publisher": "ReactBricks",
+  "version": "0.0.4",
+  "publisher": "React Bricks",
   "displayName": "React Bricks Snippets",
   "description": "React Bricks code snippets (TypeScript)",
   "repository": {
@@ -11,6 +11,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "keywords": [
     "react bricks",
+    "reactbricks",
     "react",
     "bricks",
     "react cms"

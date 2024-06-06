@@ -3,29 +3,29 @@
     "prefix": "brick",
     "body": [
       "import React from 'react'",
-      "import { Text, RichText, Image, File, Repeater, types } from 'react-bricks/frontend'",
+      "import { types, Text } from 'react-bricks/${2|frontend,rsc|}'",
       "",
-      "interface Props {",
-      "\t",
+      "interface ${1:${TM_FILENAME_BASE}}Props {",
+      "\ttitle: types.TextValue",
       "}",
       "",
-      "const ${1:${TM_FILENAME_BASE}}: types.Brick<Props> = (props) => {",
+      "const ${1:${TM_FILENAME_BASE}}: types.Brick<${1:${TM_FILENAME_BASE}}Props> = ({ title }) => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t<Text",
       "\t\t\t\tpropName=\"title\"",
-      "\t\t\t\tplaceholder=\"Title...\"",
-      "\t\t\t\trenderBlock={({ children }) => (<span>{children}</span>)}",
+      "\t\t\t\tvalue={title}",
+      "\t\t\t\tplaceholder=\"Type a title...\"",
+      "\t\t\t\trenderBlock={({ children }) => (<h1>{children}</h1>)}",
       "\t\t\t/>$0",
       "\t\t</div>",
       "\t)",
       "}",
       "",
       "${1:${TM_FILENAME_BASE}}.schema = {",
-      "\tname: '${1:${TM_FILENAME_BASE}}',",
+      "\t$LINE_COMMENT Unique brick name",
+      "\tname: '${TM_FILENAME_BASE/(.*)/${1:/downcase}/}',",
       "\tlabel: '${1:${TM_FILENAME_BASE}}',",
-      "\t$LINE_COMMENT category: '',",
-      "\t$LINE_COMMENT tags: [],",
       "",
       "\t$LINE_COMMENT Defaults when a new brick is added",
       "\tgetDefaultProps: () => ({",
@@ -47,7 +47,7 @@
       "{",
       "\tname: '${1:name}',",
       "\tlabel: '${2:Label}',",
-      "\ttype: types.SideEditPropType.${3|Text,Textarea,Number,Date,Boolean,Select,Range,Image,Custom|},",
+      "\ttype: types.SideEditPropType.${3|Text,Textarea,Number,Date,Boolean,Select,Autocomplete,Range,Image,Relationship,Custom|},",
       "}"
     ],
     "description": "Creates a React Bricks' Brick `sideEditProp`"
@@ -69,8 +69,9 @@
     "body": [
       "<Text",
       "\tpropName=\"${1:text}\"",
+      "\tvalue={${1:text}}",
       "\tplaceholder=\"Type a ${1:text}...\"",
-      "\trenderBlock={({ children \\}) => ${2:(<span>{children\\}</span>)}}",
+      "\trenderBlock={({ children }) => ${2:(<span>{children\\}</span>)}}",
       "/>"
     ],
     "description": "Add a React Bricks <Text> component"
@@ -80,8 +81,9 @@
     "body": [
       "<RichText",
       "\tpropName=\"${1:text}\"",
+      "\tvalue={${1:text}}",
       "\tplaceholder=\"Type a ${1:text}...\"",
-      "\trenderBlock={({ children \\}) => (${2:<span>{children\\}</span>})}",
+      "\trenderBlock={({ children }) => (${2:<span>{children\\}</span>})}",
       "\tallowedFeatures={[types.RichTextFeatures.${3:Bold}]}",
       "/>"
     ],
@@ -92,6 +94,7 @@
     "body": [
       "<Image",
       "\tpropName=\"${1:image}\"",
+      "\tsource={${1:image}}",
       "\talt=\"${2:altText}\"",
       "\tmaxWidth={${3:300}}",
       "\taspectRatio={${4:1}}",
@@ -104,6 +107,7 @@
     "body": [
       "<File",
       "\tpropName=\"${1:file}\"",
+      "\tsource={${1:file}}",
       "\tallowedExtensions={[${2:'.pdf'}]}",
       "\trenderBlock={({ name, url, size }) => (",
       "\t\t<a href={url}>",
@@ -116,7 +120,7 @@
   },
   "React Bricks Repeater": {
     "prefix": "Repeater",
-    "body": ["<Repeater propName=\"${1:propName}\" />"],
+    "body": ["<Repeater propName=\"${1:items}\" items={${1:items}} />"],
     "description": "Add React Bricks <Repeater> component"
   }
 }
