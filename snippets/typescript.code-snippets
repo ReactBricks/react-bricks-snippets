@@ -3,7 +3,10 @@
     "prefix": "brick",
     "body": [
       "import React from 'react'",
-      "import { types, Text } from 'react-bricks/${2|frontend,rsc|}'",
+      "//====================================================================",
+      "// IMPORTANT: import from 'react-bricks/frontend' for Next.js with Pages Folder, Remix or Gatsby",
+      "// import from 'react-bricks/rsc' for Next.js with App Router (server components).",
+      "import { types, Text } from 'react-bricks/${2|rsc,frontend|}'",
       "",
       "interface ${1:${TM_FILENAME_BASE}}Props {",
       "\ttitle: types.TextValue",
